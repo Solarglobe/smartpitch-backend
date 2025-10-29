@@ -25,7 +25,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # (Optionnel) tu peux garder tes tests/qualité ici si tu veux bloquer la release quand ça échoue
       # - name: Run quality pipeline
