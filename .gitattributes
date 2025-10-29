@@ -1,0 +1,18 @@
+# Normalisation des fins de lignes (évite les warnings LF/CRLF)
+* text=auto
+
+# On force LF pour les sources et JSON (compat CI/Linux)
+*.js   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.md   text eol=lf
+*.sh   text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+
+# Binaires (pas de normalisation)
+*.png  -text
+*.jpg  -text
+*.jpeg -text
+*.pdf  -text
