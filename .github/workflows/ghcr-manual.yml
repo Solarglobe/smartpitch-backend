@@ -1,7 +1,7 @@
 name: ghcr manual push
 
 on:
-  workflow_dispatch: {}   # bouton "Run workflow"
+  workflow_dispatch: {}  # bouton "Run workflow"
 
 permissions:
   contents: read
@@ -14,11 +14,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare lowercase owner & image
+        id: prep
+        run: |
+          echo "owner_lc=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_OUTPUT
+          echo "image=smartpitch-backend" >> $GITHUB_OUTPUT
+          echo "tag=manual-test" >> $GITHUB_OUTPUT
+
       - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ steps.prep.outputs.owner_lc }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Buildx
@@ -29,8 +36,10 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64
           push: true
-          provenance: false
+          platforms: linux/amd64
           tags: |
-            ghcr.io/${{ github.repository_owner }}/smartpitch-backend:manual-test
+            ghcr.io/${{ steps.prep.outputs.owner_lc }}/${{ steps.prep.outputs.image }}:${{ steps.prep.outputs.tag }}
+            ghcr.io/${{ steps.prep.outputs.owner_lc }}/${{ steps.prep.outputs.image }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
