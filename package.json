@@ -11,7 +11,11 @@
     "test": "node scripts/test-calc.js",
     "test:calc": "node scripts/test-calc.js",
     "test:calc:remote": "cross-env CALC_URL=https://crm.solarglobe.fr/api/calculate node scripts/test-calc.js",
-    "snapshot": "node scripts/snapshot-response.js"
+    "snapshot": "node scripts/snapshot-response.js",
+    "quality": "node scripts/quality-check.js",
+    "ci": "start-server-and-test \"node server.js\" http://localhost:3000 \"npm run quality\"",
+    "postdeploy": "npm run snapshot && git add -f tests/reponse-live-*.json && git commit -m \"auto: update live snapshot\" || echo No\\ changes\\ to\\ commit",
+    "release": "npm run ci && npm run postdeploy && git push"
   },
   "dependencies": {
     "ajv": "^8.17.1",
@@ -22,6 +26,7 @@
     "openai": "^6.6.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "start-server-and-test": "^2.0.8"
   }
 }
