@@ -22,12 +22,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.14.0
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install
 
-      # (Optionnel) tu peux garder tes tests/qualité ici si tu veux bloquer la release quand ça échoue
+      # (Optionnel) tu peux réactiver tes tests qualité ici
       # - name: Run quality pipeline
       #   run: npm run quality
 
