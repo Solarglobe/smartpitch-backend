@@ -1,0 +1,1682 @@
+{
+    "ok": true,
+    "stage": "optimizer+audit+charts",
+    "meta": {
+        "algo": "TRI>ROI>Gains25 + Autoprod",
+        "tarifs_effectifs": {
+            "mode": "base",
+            "effective_price": 0.1952,
+            "oa_enabled": true,
+            "tempo": false,
+            "tempo_avg": null
+        },
+        "oa": {
+            "enabled": true,
+            "rate_upto_9": 0.04,
+            "rate_above_9": 0.0617
+        },
+        "battery_config": {
+            "enabled": false,
+            "unit_kwh": 7,
+            "unit_price_ht": 3750,
+            "max_units": 3,
+            "units_requested": 0
+        }
+    },
+    "selection": {
+        "A": {
+            "panneaux": 6,
+            "kwc": 2.91,
+            "variante": "sans_batterie",
+            "capex": 5500
+        },
+        "B": {
+            "panneaux": 12,
+            "kwc": 5.82,
+            "variante": "sans_batterie",
+            "capex": 9000
+        }
+    },
+    "scenario_gagnant": {
+        "code": "B1",
+        "raison": "max TRI puis ROI puis Gains25"
+    },
+    "scenario_forced": null,
+    "scenarios": {
+        "A1": {
+            "label": "A1",
+            "annee1": {
+                "mois": [
+                    {
+                        "mois": "Jan",
+                        "prod": 220,
+                        "conso": 1100,
+                        "autoconso": 220,
+                        "surplus": 0,
+                        "import": 880,
+                        "eco_eur": 42.94,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Fév",
+                        "prod": 260,
+                        "conso": 1000,
+                        "autoconso": 260,
+                        "surplus": 0,
+                        "import": 740,
+                        "eco_eur": 50.75,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mar",
+                        "prod": 350,
+                        "conso": 950,
+                        "autoconso": 350,
+                        "surplus": 0,
+                        "import": 600,
+                        "eco_eur": 68.32,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Avr",
+                        "prod": 420,
+                        "conso": 900,
+                        "autoconso": 420,
+                        "surplus": 0,
+                        "import": 480,
+                        "eco_eur": 81.98,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mai",
+                        "prod": 520,
+                        "conso": 850,
+                        "autoconso": 520,
+                        "surplus": 0,
+                        "import": 330,
+                        "eco_eur": 101.5,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Jun",
+                        "prod": 580,
+                        "conso": 820,
+                        "autoconso": 580,
+                        "surplus": 0,
+                        "import": 240,
+                        "eco_eur": 113.22,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Jul",
+                        "prod": 600,
+                        "conso": 800,
+                        "autoconso": 600,
+                        "surplus": 0,
+                        "import": 200,
+                        "eco_eur": 117.12,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Aoû",
+                        "prod": 560,
+                        "conso": 830,
+                        "autoconso": 560,
+                        "surplus": 0,
+                        "import": 270,
+                        "eco_eur": 109.31,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Sep",
+                        "prod": 480,
+                        "conso": 870,
+                        "autoconso": 480,
+                        "surplus": 0,
+                        "import": 390,
+                        "eco_eur": 93.7,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Oct",
+                        "prod": 360,
+                        "conso": 950,
+                        "autoconso": 360,
+                        "surplus": 0,
+                        "import": 590,
+                        "eco_eur": 70.27,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Nov",
+                        "prod": 240,
+                        "conso": 1050,
+                        "autoconso": 240,
+                        "surplus": 0,
+                        "import": 810,
+                        "eco_eur": 46.85,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Déc",
+                        "prod": 200,
+                        "conso": 1120,
+                        "autoconso": 200,
+                        "surplus": 0,
+                        "import": 920,
+                        "eco_eur": 39.04,
+                        "oa_eur": 0
+                    }
+                ],
+                "totaux": {
+                    "prod": 4790,
+                    "conso": 11240,
+                    "autoconso": 4790,
+                    "surplus": 0,
+                    "import": 6450,
+                    "economie_auto": 935.01,
+                    "revenu_oa": 0,
+                    "prime": 0
+                }
+            },
+            "ans25": [
+                {
+                    "annee": 1,
+                    "prod": 4790,
+                    "economie_auto": 935.01,
+                    "revenu_oa": 0,
+                    "gains_totaux": 935.01
+                },
+                {
+                    "annee": 2,
+                    "prod": 4766.05,
+                    "economie_auto": 967.55,
+                    "revenu_oa": 0,
+                    "gains_totaux": 967.55
+                },
+                {
+                    "annee": 3,
+                    "prod": 4742.22,
+                    "economie_auto": 1001.22,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1001.22
+                },
+                {
+                    "annee": 4,
+                    "prod": 4718.51,
+                    "economie_auto": 1036.06,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1036.06
+                },
+                {
+                    "annee": 5,
+                    "prod": 4694.92,
+                    "economie_auto": 1072.11,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1072.11
+                },
+                {
+                    "annee": 6,
+                    "prod": 4671.44,
+                    "economie_auto": 1109.42,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1109.42
+                },
+                {
+                    "annee": 7,
+                    "prod": 4648.08,
+                    "economie_auto": 1148.03,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1148.03
+                },
+                {
+                    "annee": 8,
+                    "prod": 4624.84,
+                    "economie_auto": 1187.98,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1187.98
+                },
+                {
+                    "annee": 9,
+                    "prod": 4601.72,
+                    "economie_auto": 1229.32,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1229.32
+                },
+                {
+                    "annee": 10,
+                    "prod": 4578.71,
+                    "economie_auto": 1272.11,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1272.11
+                },
+                {
+                    "annee": 11,
+                    "prod": 4555.82,
+                    "economie_auto": 1316.37,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1316.37
+                },
+                {
+                    "annee": 12,
+                    "prod": 4533.04,
+                    "economie_auto": 1362.18,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1362.18
+                },
+                {
+                    "annee": 13,
+                    "prod": 4510.37,
+                    "economie_auto": 1409.59,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1409.59
+                },
+                {
+                    "annee": 14,
+                    "prod": 4487.82,
+                    "economie_auto": 1458.64,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1458.64
+                },
+                {
+                    "annee": 15,
+                    "prod": 4465.38,
+                    "economie_auto": 1509.4,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1509.4
+                },
+                {
+                    "annee": 16,
+                    "prod": 4443.06,
+                    "economie_auto": 1561.93,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1561.93
+                },
+                {
+                    "annee": 17,
+                    "prod": 4420.84,
+                    "economie_auto": 1616.29,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1616.29
+                },
+                {
+                    "annee": 18,
+                    "prod": 4398.74,
+                    "economie_auto": 1672.53,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1672.53
+                },
+                {
+                    "annee": 19,
+                    "prod": 4376.74,
+                    "economie_auto": 1730.74,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1730.74
+                },
+                {
+                    "annee": 20,
+                    "prod": 4354.86,
+                    "economie_auto": 1790.97,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1790.97
+                },
+                {
+                    "annee": 21,
+                    "prod": 4333.08,
+                    "economie_auto": 1853.29,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1853.29
+                },
+                {
+                    "annee": 22,
+                    "prod": 4311.42,
+                    "economie_auto": 1917.79,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1917.79
+                },
+                {
+                    "annee": 23,
+                    "prod": 4289.86,
+                    "economie_auto": 1984.52,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1984.52
+                },
+                {
+                    "annee": 24,
+                    "prod": 4268.41,
+                    "economie_auto": 2053.59,
+                    "revenu_oa": 0,
+                    "gains_totaux": 2053.59
+                },
+                {
+                    "annee": 25,
+                    "prod": 4247.07,
+                    "economie_auto": 2125.05,
+                    "revenu_oa": 0,
+                    "gains_totaux": 2125.05
+                }
+            ],
+            "capex_ttc": {
+                "materiel_ttc": 3850,
+                "pose_ttc": 1650,
+                "total_ttc": 5500
+            },
+            "kpi": {
+                "roi_annees": 6,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 20.07,
+                "lcoe_eur_kwh": 0.05,
+                "autoconso_pct": 42.62,
+                "autoprod_pct": 100,
+                "gains_annee1": 935.01,
+                "gains_25ans": 36321.7
+            },
+            "audit": {
+                "ok": true,
+                "messages": []
+            }
+        },
+        "A2": {
+            "label": "A2",
+            "annee1": {
+                "mois": [
+                    {
+                        "mois": "Jan",
+                        "prod": 220,
+                        "conso": 1100,
+                        "autoconso": 220,
+                        "surplus": 0,
+                        "import": 880,
+                        "eco_eur": 42.94,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Fév",
+                        "prod": 260,
+                        "conso": 1000,
+                        "autoconso": 260,
+                        "surplus": 0,
+                        "import": 740,
+                        "eco_eur": 50.75,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mar",
+                        "prod": 350,
+                        "conso": 950,
+                        "autoconso": 350,
+                        "surplus": 0,
+                        "import": 600,
+                        "eco_eur": 68.32,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Avr",
+                        "prod": 420,
+                        "conso": 900,
+                        "autoconso": 420,
+                        "surplus": 0,
+                        "import": 480,
+                        "eco_eur": 81.98,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mai",
+                        "prod": 520,
+                        "conso": 850,
+                        "autoconso": 520,
+                        "surplus": 0,
+                        "import": 330,
+                        "eco_eur": 101.5,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Jun",
+                        "prod": 580,
+                        "conso": 820,
+                        "autoconso": 580,
+                        "surplus": 0,
+                        "import": 240,
+                        "eco_eur": 113.22,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Jul",
+                        "prod": 600,
+                        "conso": 800,
+                        "autoconso": 600,
+                        "surplus": 0,
+                        "import": 200,
+                        "eco_eur": 117.12,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Aoû",
+                        "prod": 560,
+                        "conso": 830,
+                        "autoconso": 560,
+                        "surplus": 0,
+                        "import": 270,
+                        "eco_eur": 109.31,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Sep",
+                        "prod": 480,
+                        "conso": 870,
+                        "autoconso": 480,
+                        "surplus": 0,
+                        "import": 390,
+                        "eco_eur": 93.7,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Oct",
+                        "prod": 360,
+                        "conso": 950,
+                        "autoconso": 360,
+                        "surplus": 0,
+                        "import": 590,
+                        "eco_eur": 70.27,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Nov",
+                        "prod": 240,
+                        "conso": 1050,
+                        "autoconso": 240,
+                        "surplus": 0,
+                        "import": 810,
+                        "eco_eur": 46.85,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Déc",
+                        "prod": 200,
+                        "conso": 1120,
+                        "autoconso": 200,
+                        "surplus": 0,
+                        "import": 920,
+                        "eco_eur": 39.04,
+                        "oa_eur": 0
+                    }
+                ],
+                "totaux": {
+                    "prod": 4790,
+                    "conso": 11240,
+                    "autoconso": 4790,
+                    "surplus": 0,
+                    "import": 6450,
+                    "economie_auto": 935.01,
+                    "revenu_oa": 0,
+                    "prime": 0
+                }
+            },
+            "ans25": [
+                {
+                    "annee": 1,
+                    "prod": 4790,
+                    "economie_auto": 935.01,
+                    "revenu_oa": 0,
+                    "gains_totaux": 935.01
+                },
+                {
+                    "annee": 2,
+                    "prod": 4766.05,
+                    "economie_auto": 967.55,
+                    "revenu_oa": 0,
+                    "gains_totaux": 967.55
+                },
+                {
+                    "annee": 3,
+                    "prod": 4742.22,
+                    "economie_auto": 1001.22,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1001.22
+                },
+                {
+                    "annee": 4,
+                    "prod": 4718.51,
+                    "economie_auto": 1036.06,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1036.06
+                },
+                {
+                    "annee": 5,
+                    "prod": 4694.92,
+                    "economie_auto": 1072.11,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1072.11
+                },
+                {
+                    "annee": 6,
+                    "prod": 4671.44,
+                    "economie_auto": 1109.42,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1109.42
+                },
+                {
+                    "annee": 7,
+                    "prod": 4648.08,
+                    "economie_auto": 1148.03,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1148.03
+                },
+                {
+                    "annee": 8,
+                    "prod": 4624.84,
+                    "economie_auto": 1187.98,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1187.98
+                },
+                {
+                    "annee": 9,
+                    "prod": 4601.72,
+                    "economie_auto": 1229.32,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1229.32
+                },
+                {
+                    "annee": 10,
+                    "prod": 4578.71,
+                    "economie_auto": 1272.11,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1272.11
+                },
+                {
+                    "annee": 11,
+                    "prod": 4555.82,
+                    "economie_auto": 1316.37,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1316.37
+                },
+                {
+                    "annee": 12,
+                    "prod": 4533.04,
+                    "economie_auto": 1362.18,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1362.18
+                },
+                {
+                    "annee": 13,
+                    "prod": 4510.37,
+                    "economie_auto": 1409.59,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1409.59
+                },
+                {
+                    "annee": 14,
+                    "prod": 4487.82,
+                    "economie_auto": 1458.64,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1458.64
+                },
+                {
+                    "annee": 15,
+                    "prod": 4465.38,
+                    "economie_auto": 1509.4,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1509.4
+                },
+                {
+                    "annee": 16,
+                    "prod": 4443.06,
+                    "economie_auto": 1561.93,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1561.93
+                },
+                {
+                    "annee": 17,
+                    "prod": 4420.84,
+                    "economie_auto": 1616.29,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1616.29
+                },
+                {
+                    "annee": 18,
+                    "prod": 4398.74,
+                    "economie_auto": 1672.53,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1672.53
+                },
+                {
+                    "annee": 19,
+                    "prod": 4376.74,
+                    "economie_auto": 1730.74,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1730.74
+                },
+                {
+                    "annee": 20,
+                    "prod": 4354.86,
+                    "economie_auto": 1790.97,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1790.97
+                },
+                {
+                    "annee": 21,
+                    "prod": 4333.08,
+                    "economie_auto": 1853.29,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1853.29
+                },
+                {
+                    "annee": 22,
+                    "prod": 4311.42,
+                    "economie_auto": 1917.79,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1917.79
+                },
+                {
+                    "annee": 23,
+                    "prod": 4289.86,
+                    "economie_auto": 1984.52,
+                    "revenu_oa": 0,
+                    "gains_totaux": 1984.52
+                },
+                {
+                    "annee": 24,
+                    "prod": 4268.41,
+                    "economie_auto": 2053.59,
+                    "revenu_oa": 0,
+                    "gains_totaux": 2053.59
+                },
+                {
+                    "annee": 25,
+                    "prod": 4247.07,
+                    "economie_auto": 2125.05,
+                    "revenu_oa": 0,
+                    "gains_totaux": 2125.05
+                }
+            ],
+            "capex_ttc": {
+                "materiel_ttc": 3850,
+                "pose_ttc": 1650,
+                "total_ttc": 5500
+            },
+            "kpi": {
+                "roi_annees": 6,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 20.07,
+                "lcoe_eur_kwh": 0.05,
+                "autoconso_pct": 42.62,
+                "autoprod_pct": 100,
+                "gains_annee1": 935.01,
+                "gains_25ans": 36321.7
+            },
+            "audit": {
+                "ok": true,
+                "messages": []
+            }
+        },
+        "B1": {
+            "label": "B1",
+            "annee1": {
+                "mois": [
+                    {
+                        "mois": "Jan",
+                        "prod": 440,
+                        "conso": 1100,
+                        "autoconso": 440,
+                        "surplus": 0,
+                        "import": 660,
+                        "eco_eur": 85.89,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Fév",
+                        "prod": 520,
+                        "conso": 1000,
+                        "autoconso": 520,
+                        "surplus": 0,
+                        "import": 480,
+                        "eco_eur": 101.5,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mar",
+                        "prod": 700,
+                        "conso": 950,
+                        "autoconso": 700,
+                        "surplus": 0,
+                        "import": 250,
+                        "eco_eur": 136.64,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Avr",
+                        "prod": 840,
+                        "conso": 900,
+                        "autoconso": 840,
+                        "surplus": 0,
+                        "import": 60,
+                        "eco_eur": 163.97,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mai",
+                        "prod": 1040,
+                        "conso": 850,
+                        "autoconso": 850,
+                        "surplus": 190,
+                        "import": 0,
+                        "eco_eur": 165.92,
+                        "oa_eur": 7.6
+                    },
+                    {
+                        "mois": "Jun",
+                        "prod": 1160,
+                        "conso": 820,
+                        "autoconso": 820,
+                        "surplus": 340,
+                        "import": 0,
+                        "eco_eur": 160.06,
+                        "oa_eur": 13.6
+                    },
+                    {
+                        "mois": "Jul",
+                        "prod": 1200,
+                        "conso": 800,
+                        "autoconso": 800,
+                        "surplus": 400,
+                        "import": 0,
+                        "eco_eur": 156.16,
+                        "oa_eur": 16
+                    },
+                    {
+                        "mois": "Aoû",
+                        "prod": 1120,
+                        "conso": 830,
+                        "autoconso": 830,
+                        "surplus": 290,
+                        "import": 0,
+                        "eco_eur": 162.02,
+                        "oa_eur": 11.6
+                    },
+                    {
+                        "mois": "Sep",
+                        "prod": 960,
+                        "conso": 870,
+                        "autoconso": 870,
+                        "surplus": 90,
+                        "import": 0,
+                        "eco_eur": 169.82,
+                        "oa_eur": 3.6
+                    },
+                    {
+                        "mois": "Oct",
+                        "prod": 720,
+                        "conso": 950,
+                        "autoconso": 720,
+                        "surplus": 0,
+                        "import": 230,
+                        "eco_eur": 140.54,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Nov",
+                        "prod": 480,
+                        "conso": 1050,
+                        "autoconso": 480,
+                        "surplus": 0,
+                        "import": 570,
+                        "eco_eur": 93.7,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Déc",
+                        "prod": 400,
+                        "conso": 1120,
+                        "autoconso": 400,
+                        "surplus": 0,
+                        "import": 720,
+                        "eco_eur": 78.08,
+                        "oa_eur": 0
+                    }
+                ],
+                "totaux": {
+                    "prod": 9580,
+                    "conso": 11240,
+                    "autoconso": 8270,
+                    "surplus": 1310,
+                    "import": 2970,
+                    "economie_auto": 1614.3,
+                    "revenu_oa": 52.4,
+                    "prime": 0
+                }
+            },
+            "ans25": [
+                {
+                    "annee": 1,
+                    "prod": 9580,
+                    "economie_auto": 1614.3,
+                    "revenu_oa": 52.4,
+                    "gains_totaux": 1666.7
+                },
+                {
+                    "annee": 2,
+                    "prod": 9532.1,
+                    "economie_auto": 1670.48,
+                    "revenu_oa": 52.14,
+                    "gains_totaux": 1722.62
+                },
+                {
+                    "annee": 3,
+                    "prod": 9484.44,
+                    "economie_auto": 1728.61,
+                    "revenu_oa": 51.88,
+                    "gains_totaux": 1780.49
+                },
+                {
+                    "annee": 4,
+                    "prod": 9437.02,
+                    "economie_auto": 1788.77,
+                    "revenu_oa": 51.62,
+                    "gains_totaux": 1840.39
+                },
+                {
+                    "annee": 5,
+                    "prod": 9389.83,
+                    "economie_auto": 1851.02,
+                    "revenu_oa": 51.36,
+                    "gains_totaux": 1902.38
+                },
+                {
+                    "annee": 6,
+                    "prod": 9342.88,
+                    "economie_auto": 1915.44,
+                    "revenu_oa": 51.1,
+                    "gains_totaux": 1966.54
+                },
+                {
+                    "annee": 7,
+                    "prod": 9296.17,
+                    "economie_auto": 1982.09,
+                    "revenu_oa": 50.85,
+                    "gains_totaux": 2032.94
+                },
+                {
+                    "annee": 8,
+                    "prod": 9249.69,
+                    "economie_auto": 2051.07,
+                    "revenu_oa": 50.59,
+                    "gains_totaux": 2101.66
+                },
+                {
+                    "annee": 9,
+                    "prod": 9203.44,
+                    "economie_auto": 2122.45,
+                    "revenu_oa": 50.34,
+                    "gains_totaux": 2172.79
+                },
+                {
+                    "annee": 10,
+                    "prod": 9157.42,
+                    "economie_auto": 2196.31,
+                    "revenu_oa": 50.09,
+                    "gains_totaux": 2246.4
+                },
+                {
+                    "annee": 11,
+                    "prod": 9111.64,
+                    "economie_auto": 2272.74,
+                    "revenu_oa": 49.84,
+                    "gains_totaux": 2322.58
+                },
+                {
+                    "annee": 12,
+                    "prod": 9066.08,
+                    "economie_auto": 2351.83,
+                    "revenu_oa": 49.59,
+                    "gains_totaux": 2401.42
+                },
+                {
+                    "annee": 13,
+                    "prod": 9020.75,
+                    "economie_auto": 2433.67,
+                    "revenu_oa": 49.34,
+                    "gains_totaux": 2483.01
+                },
+                {
+                    "annee": 14,
+                    "prod": 8975.64,
+                    "economie_auto": 2518.37,
+                    "revenu_oa": 49.09,
+                    "gains_totaux": 2567.46
+                },
+                {
+                    "annee": 15,
+                    "prod": 8930.76,
+                    "economie_auto": 2606,
+                    "revenu_oa": 48.85,
+                    "gains_totaux": 2654.85
+                },
+                {
+                    "annee": 16,
+                    "prod": 8886.11,
+                    "economie_auto": 2696.69,
+                    "revenu_oa": 48.6,
+                    "gains_totaux": 2745.3
+                },
+                {
+                    "annee": 17,
+                    "prod": 8841.68,
+                    "economie_auto": 2790.54,
+                    "revenu_oa": 48.36,
+                    "gains_totaux": 2838.9
+                },
+                {
+                    "annee": 18,
+                    "prod": 8797.47,
+                    "economie_auto": 2887.65,
+                    "revenu_oa": 48.12,
+                    "gains_totaux": 2935.77
+                },
+                {
+                    "annee": 19,
+                    "prod": 8753.48,
+                    "economie_auto": 2988.14,
+                    "revenu_oa": 47.88,
+                    "gains_totaux": 3036.02
+                },
+                {
+                    "annee": 20,
+                    "prod": 8709.72,
+                    "economie_auto": 3092.13,
+                    "revenu_oa": 47.64,
+                    "gains_totaux": 3139.77
+                },
+                {
+                    "annee": 21,
+                    "prod": 8666.17,
+                    "economie_auto": 3199.73,
+                    "revenu_oa": 47.4,
+                    "gains_totaux": 3247.13
+                },
+                {
+                    "annee": 22,
+                    "prod": 8622.84,
+                    "economie_auto": 3311.08,
+                    "revenu_oa": 47.16,
+                    "gains_totaux": 3358.25
+                },
+                {
+                    "annee": 23,
+                    "prod": 8579.72,
+                    "economie_auto": 3426.31,
+                    "revenu_oa": 46.93,
+                    "gains_totaux": 3473.24
+                },
+                {
+                    "annee": 24,
+                    "prod": 8536.82,
+                    "economie_auto": 3545.54,
+                    "revenu_oa": 46.69,
+                    "gains_totaux": 3592.24
+                },
+                {
+                    "annee": 25,
+                    "prod": 8494.14,
+                    "economie_auto": 3668.93,
+                    "revenu_oa": 46.46,
+                    "gains_totaux": 3715.39
+                }
+            ],
+            "capex_ttc": {
+                "materiel_ttc": 6300,
+                "pose_ttc": 2700,
+                "total_ttc": 9000
+            },
+            "kpi": {
+                "roi_annees": 6,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 21.57,
+                "lcoe_eur_kwh": 0.04,
+                "autoconso_pct": 73.58,
+                "autoprod_pct": 86.33,
+                "gains_annee1": 1666.7,
+                "gains_25ans": 63944.23
+            },
+            "audit": {
+                "ok": true,
+                "messages": []
+            }
+        },
+        "B2": {
+            "label": "B2",
+            "annee1": {
+                "mois": [
+                    {
+                        "mois": "Jan",
+                        "prod": 440,
+                        "conso": 1100,
+                        "autoconso": 440,
+                        "surplus": 0,
+                        "import": 660,
+                        "eco_eur": 85.89,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Fév",
+                        "prod": 520,
+                        "conso": 1000,
+                        "autoconso": 520,
+                        "surplus": 0,
+                        "import": 480,
+                        "eco_eur": 101.5,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mar",
+                        "prod": 700,
+                        "conso": 950,
+                        "autoconso": 700,
+                        "surplus": 0,
+                        "import": 250,
+                        "eco_eur": 136.64,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Avr",
+                        "prod": 840,
+                        "conso": 900,
+                        "autoconso": 840,
+                        "surplus": 0,
+                        "import": 60,
+                        "eco_eur": 163.97,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Mai",
+                        "prod": 1040,
+                        "conso": 850,
+                        "autoconso": 850,
+                        "surplus": 190,
+                        "import": 0,
+                        "eco_eur": 165.92,
+                        "oa_eur": 7.6
+                    },
+                    {
+                        "mois": "Jun",
+                        "prod": 1160,
+                        "conso": 820,
+                        "autoconso": 820,
+                        "surplus": 340,
+                        "import": 0,
+                        "eco_eur": 160.06,
+                        "oa_eur": 13.6
+                    },
+                    {
+                        "mois": "Jul",
+                        "prod": 1200,
+                        "conso": 800,
+                        "autoconso": 800,
+                        "surplus": 400,
+                        "import": 0,
+                        "eco_eur": 156.16,
+                        "oa_eur": 16
+                    },
+                    {
+                        "mois": "Aoû",
+                        "prod": 1120,
+                        "conso": 830,
+                        "autoconso": 830,
+                        "surplus": 290,
+                        "import": 0,
+                        "eco_eur": 162.02,
+                        "oa_eur": 11.6
+                    },
+                    {
+                        "mois": "Sep",
+                        "prod": 960,
+                        "conso": 870,
+                        "autoconso": 870,
+                        "surplus": 90,
+                        "import": 0,
+                        "eco_eur": 169.82,
+                        "oa_eur": 3.6
+                    },
+                    {
+                        "mois": "Oct",
+                        "prod": 720,
+                        "conso": 950,
+                        "autoconso": 720,
+                        "surplus": 0,
+                        "import": 230,
+                        "eco_eur": 140.54,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Nov",
+                        "prod": 480,
+                        "conso": 1050,
+                        "autoconso": 480,
+                        "surplus": 0,
+                        "import": 570,
+                        "eco_eur": 93.7,
+                        "oa_eur": 0
+                    },
+                    {
+                        "mois": "Déc",
+                        "prod": 400,
+                        "conso": 1120,
+                        "autoconso": 400,
+                        "surplus": 0,
+                        "import": 720,
+                        "eco_eur": 78.08,
+                        "oa_eur": 0
+                    }
+                ],
+                "totaux": {
+                    "prod": 9580,
+                    "conso": 11240,
+                    "autoconso": 8270,
+                    "surplus": 1310,
+                    "import": 2970,
+                    "economie_auto": 1614.3,
+                    "revenu_oa": 52.4,
+                    "prime": 0
+                }
+            },
+            "ans25": [
+                {
+                    "annee": 1,
+                    "prod": 9580,
+                    "economie_auto": 1614.3,
+                    "revenu_oa": 52.4,
+                    "gains_totaux": 1666.7
+                },
+                {
+                    "annee": 2,
+                    "prod": 9532.1,
+                    "economie_auto": 1670.48,
+                    "revenu_oa": 52.14,
+                    "gains_totaux": 1722.62
+                },
+                {
+                    "annee": 3,
+                    "prod": 9484.44,
+                    "economie_auto": 1728.61,
+                    "revenu_oa": 51.88,
+                    "gains_totaux": 1780.49
+                },
+                {
+                    "annee": 4,
+                    "prod": 9437.02,
+                    "economie_auto": 1788.77,
+                    "revenu_oa": 51.62,
+                    "gains_totaux": 1840.39
+                },
+                {
+                    "annee": 5,
+                    "prod": 9389.83,
+                    "economie_auto": 1851.02,
+                    "revenu_oa": 51.36,
+                    "gains_totaux": 1902.38
+                },
+                {
+                    "annee": 6,
+                    "prod": 9342.88,
+                    "economie_auto": 1915.44,
+                    "revenu_oa": 51.1,
+                    "gains_totaux": 1966.54
+                },
+                {
+                    "annee": 7,
+                    "prod": 9296.17,
+                    "economie_auto": 1982.09,
+                    "revenu_oa": 50.85,
+                    "gains_totaux": 2032.94
+                },
+                {
+                    "annee": 8,
+                    "prod": 9249.69,
+                    "economie_auto": 2051.07,
+                    "revenu_oa": 50.59,
+                    "gains_totaux": 2101.66
+                },
+                {
+                    "annee": 9,
+                    "prod": 9203.44,
+                    "economie_auto": 2122.45,
+                    "revenu_oa": 50.34,
+                    "gains_totaux": 2172.79
+                },
+                {
+                    "annee": 10,
+                    "prod": 9157.42,
+                    "economie_auto": 2196.31,
+                    "revenu_oa": 50.09,
+                    "gains_totaux": 2246.4
+                },
+                {
+                    "annee": 11,
+                    "prod": 9111.64,
+                    "economie_auto": 2272.74,
+                    "revenu_oa": 49.84,
+                    "gains_totaux": 2322.58
+                },
+                {
+                    "annee": 12,
+                    "prod": 9066.08,
+                    "economie_auto": 2351.83,
+                    "revenu_oa": 49.59,
+                    "gains_totaux": 2401.42
+                },
+                {
+                    "annee": 13,
+                    "prod": 9020.75,
+                    "economie_auto": 2433.67,
+                    "revenu_oa": 49.34,
+                    "gains_totaux": 2483.01
+                },
+                {
+                    "annee": 14,
+                    "prod": 8975.64,
+                    "economie_auto": 2518.37,
+                    "revenu_oa": 49.09,
+                    "gains_totaux": 2567.46
+                },
+                {
+                    "annee": 15,
+                    "prod": 8930.76,
+                    "economie_auto": 2606,
+                    "revenu_oa": 48.85,
+                    "gains_totaux": 2654.85
+                },
+                {
+                    "annee": 16,
+                    "prod": 8886.11,
+                    "economie_auto": 2696.69,
+                    "revenu_oa": 48.6,
+                    "gains_totaux": 2745.3
+                },
+                {
+                    "annee": 17,
+                    "prod": 8841.68,
+                    "economie_auto": 2790.54,
+                    "revenu_oa": 48.36,
+                    "gains_totaux": 2838.9
+                },
+                {
+                    "annee": 18,
+                    "prod": 8797.47,
+                    "economie_auto": 2887.65,
+                    "revenu_oa": 48.12,
+                    "gains_totaux": 2935.77
+                },
+                {
+                    "annee": 19,
+                    "prod": 8753.48,
+                    "economie_auto": 2988.14,
+                    "revenu_oa": 47.88,
+                    "gains_totaux": 3036.02
+                },
+                {
+                    "annee": 20,
+                    "prod": 8709.72,
+                    "economie_auto": 3092.13,
+                    "revenu_oa": 47.64,
+                    "gains_totaux": 3139.77
+                },
+                {
+                    "annee": 21,
+                    "prod": 8666.17,
+                    "economie_auto": 3199.73,
+                    "revenu_oa": 47.4,
+                    "gains_totaux": 3247.13
+                },
+                {
+                    "annee": 22,
+                    "prod": 8622.84,
+                    "economie_auto": 3311.08,
+                    "revenu_oa": 47.16,
+                    "gains_totaux": 3358.25
+                },
+                {
+                    "annee": 23,
+                    "prod": 8579.72,
+                    "economie_auto": 3426.31,
+                    "revenu_oa": 46.93,
+                    "gains_totaux": 3473.24
+                },
+                {
+                    "annee": 24,
+                    "prod": 8536.82,
+                    "economie_auto": 3545.54,
+                    "revenu_oa": 46.69,
+                    "gains_totaux": 3592.24
+                },
+                {
+                    "annee": 25,
+                    "prod": 8494.14,
+                    "economie_auto": 3668.93,
+                    "revenu_oa": 46.46,
+                    "gains_totaux": 3715.39
+                }
+            ],
+            "capex_ttc": {
+                "materiel_ttc": 6300,
+                "pose_ttc": 2700,
+                "total_ttc": 9000
+            },
+            "kpi": {
+                "roi_annees": 6,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 21.57,
+                "lcoe_eur_kwh": 0.04,
+                "autoconso_pct": 73.58,
+                "autoprod_pct": 86.33,
+                "gains_annee1": 1666.7,
+                "gains_25ans": 63944.23
+            },
+            "audit": {
+                "ok": true,
+                "messages": []
+            }
+        }
+    },
+    "charts": {
+        "stacked_mensuel": [
+            {
+                "mois": "Jan",
+                "production": 220,
+                "consommation": 1100,
+                "autoconso": 220,
+                "surplus": 0,
+                "import": 880
+            },
+            {
+                "mois": "Fév",
+                "production": 260,
+                "consommation": 1000,
+                "autoconso": 260,
+                "surplus": 0,
+                "import": 740
+            },
+            {
+                "mois": "Mar",
+                "production": 350,
+                "consommation": 950,
+                "autoconso": 350,
+                "surplus": 0,
+                "import": 600
+            },
+            {
+                "mois": "Avr",
+                "production": 420,
+                "consommation": 900,
+                "autoconso": 420,
+                "surplus": 0,
+                "import": 480
+            },
+            {
+                "mois": "Mai",
+                "production": 520,
+                "consommation": 850,
+                "autoconso": 520,
+                "surplus": 0,
+                "import": 330
+            },
+            {
+                "mois": "Jun",
+                "production": 580,
+                "consommation": 820,
+                "autoconso": 580,
+                "surplus": 0,
+                "import": 240
+            },
+            {
+                "mois": "Jul",
+                "production": 600,
+                "consommation": 800,
+                "autoconso": 600,
+                "surplus": 0,
+                "import": 200
+            },
+            {
+                "mois": "Aoû",
+                "production": 560,
+                "consommation": 830,
+                "autoconso": 560,
+                "surplus": 0,
+                "import": 270
+            },
+            {
+                "mois": "Sep",
+                "production": 480,
+                "consommation": 870,
+                "autoconso": 480,
+                "surplus": 0,
+                "import": 390
+            },
+            {
+                "mois": "Oct",
+                "production": 360,
+                "consommation": 950,
+                "autoconso": 360,
+                "surplus": 0,
+                "import": 590
+            },
+            {
+                "mois": "Nov",
+                "production": 240,
+                "consommation": 1050,
+                "autoconso": 240,
+                "surplus": 0,
+                "import": 810
+            },
+            {
+                "mois": "Déc",
+                "production": 200,
+                "consommation": 1120,
+                "autoconso": 200,
+                "surplus": 0,
+                "import": 920
+            }
+        ],
+        "gains_cumules_25ans": [
+            {
+                "annee": 1,
+                "gains_cumules": 1666.7,
+                "gains_annuels": 1666.7
+            },
+            {
+                "annee": 2,
+                "gains_cumules": 3389.32,
+                "gains_annuels": 1722.62
+            },
+            {
+                "annee": 3,
+                "gains_cumules": 5169.81,
+                "gains_annuels": 1780.49
+            },
+            {
+                "annee": 4,
+                "gains_cumules": 7010.2,
+                "gains_annuels": 1840.39
+            },
+            {
+                "annee": 5,
+                "gains_cumules": 8912.58,
+                "gains_annuels": 1902.38
+            },
+            {
+                "annee": 6,
+                "gains_cumules": 10879.12,
+                "gains_annuels": 1966.54
+            },
+            {
+                "annee": 7,
+                "gains_cumules": 12912.06,
+                "gains_annuels": 2032.94
+            },
+            {
+                "annee": 8,
+                "gains_cumules": 15013.72,
+                "gains_annuels": 2101.66
+            },
+            {
+                "annee": 9,
+                "gains_cumules": 17186.51,
+                "gains_annuels": 2172.79
+            },
+            {
+                "annee": 10,
+                "gains_cumules": 19432.91,
+                "gains_annuels": 2246.4
+            },
+            {
+                "annee": 11,
+                "gains_cumules": 21755.49,
+                "gains_annuels": 2322.58
+            },
+            {
+                "annee": 12,
+                "gains_cumules": 24156.91,
+                "gains_annuels": 2401.42
+            },
+            {
+                "annee": 13,
+                "gains_cumules": 26639.92,
+                "gains_annuels": 2483.01
+            },
+            {
+                "annee": 14,
+                "gains_cumules": 29207.38,
+                "gains_annuels": 2567.46
+            },
+            {
+                "annee": 15,
+                "gains_cumules": 31862.23,
+                "gains_annuels": 2654.85
+            },
+            {
+                "annee": 16,
+                "gains_cumules": 34607.53,
+                "gains_annuels": 2745.3
+            },
+            {
+                "annee": 17,
+                "gains_cumules": 37446.43,
+                "gains_annuels": 2838.9
+            },
+            {
+                "annee": 18,
+                "gains_cumules": 40382.2,
+                "gains_annuels": 2935.77
+            },
+            {
+                "annee": 19,
+                "gains_cumules": 43418.22,
+                "gains_annuels": 3036.02
+            },
+            {
+                "annee": 20,
+                "gains_cumules": 46557.99,
+                "gains_annuels": 3139.77
+            },
+            {
+                "annee": 21,
+                "gains_cumules": 49805.12,
+                "gains_annuels": 3247.13
+            },
+            {
+                "annee": 22,
+                "gains_cumules": 53163.37,
+                "gains_annuels": 3358.25
+            },
+            {
+                "annee": 23,
+                "gains_cumules": 56636.61,
+                "gains_annuels": 3473.24
+            },
+            {
+                "annee": 24,
+                "gains_cumules": 60228.85,
+                "gains_annuels": 3592.24
+            },
+            {
+                "annee": 25,
+                "gains_cumules": 63944.24,
+                "gains_annuels": 3715.39
+            }
+        ],
+        "comparatif_kpi": [
+            {
+                "scenario": "A1",
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 20.07,
+                "lcoe_eur_kwh": 0.05,
+                "gains_25ans": 36321.7
+            },
+            {
+                "scenario": "A2",
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 20.07,
+                "lcoe_eur_kwh": 0.05,
+                "gains_25ans": 36321.7
+            },
+            {
+                "scenario": "B1",
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 21.57,
+                "lcoe_eur_kwh": 0.04,
+                "gains_25ans": 63944.23
+            },
+            {
+                "scenario": "B2",
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 21.57,
+                "lcoe_eur_kwh": 0.04,
+                "gains_25ans": 63944.23
+            }
+        ],
+        "impact_batterie_A": {
+            "sans_batterie": {
+                "autoprod_pct": 100,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 20.07,
+                "surplus_kwh_an": 0
+            },
+            "avec_batterie": {
+                "autoprod_pct": 100,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 20.07,
+                "surplus_kwh_an": 0
+            },
+            "deltas": {
+                "autoprod_pct": 0,
+                "roi_annuel_pct": 0,
+                "tri_pct": 0,
+                "surplus_kwh_an": 0
+            }
+        },
+        "impact_batterie_B": {
+            "sans_batterie": {
+                "autoprod_pct": 86.33,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 21.57,
+                "surplus_kwh_an": 1310
+            },
+            "avec_batterie": {
+                "autoprod_pct": 86.33,
+                "roi_annuel_pct": 16.67,
+                "tri_pct": 21.57,
+                "surplus_kwh_an": 1310
+            },
+            "deltas": {
+                "autoprod_pct": 0,
+                "roi_annuel_pct": 0,
+                "tri_pct": 0,
+                "surplus_kwh_an": 0
+            }
+        },
+        "financement": null
+    },
+    "audit_ok": true,
+    "audit": {
+        "audit_ok": true,
+        "issues": []
+    }
+}

@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solarglobe.local/schemas/calcResponse.schema.json",
+  "title": "SmartPitch Calculation API Response",
+  "type": "object",
+  "required": ["ok", "stage", "meta", "selection", "scenarios", "charts", "audit_ok", "audit"],
+  "properties": {
+    "ok": { "type": "boolean", "const": true },
+    "stage": { "type": "string" },
+
+    "meta": {
+      "type": "object",
+      "required": ["algo"],
+      "properties": {
+        "algo": { "type": "string" },
+
+        "min_panneaux": { "type": ["integer", "null"] },
+        "max_panneaux": { "type": ["integer", "null"] },
+        "budget_eur": { "type": ["number", "null"] },
+
+        "tarifs_effectifs": {
+          "type": "object",
+          "required": ["mode", "effective_price"],
+          "properties": {
+            "mode": { "type": "string", "enum": ["base", "hp_hc", "tempo"] },
+            "base": { "type": ["number", "null"] },
+            "hp": { "type": ["number", "null"] },
+            "hc": { "type": ["number", "null"] },
+            "ratio_hp": { "type": ["number", "null"] },
+            "tempo": { "type": ["boolean", "null"] },
+            "tempo_avg": { "type": ["number", "null"] },
+            "effective_price": { "type": "number" },
+            "oa_enabled": { "type": ["boolean", "null"] }
+          },
+          "additionalProperties": false
+        },
+
+        "oa": {
+          "type": "object",
+          "required": ["enabled", "rate_upto_9", "rate_above_9"],
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "rate_upto_9": { "type": "number" },
+            "rate_above_9": { "type": "number" }
+          },
+          "additionalProperties": false
+        },
+
+        "battery_config": {
+          "type": "object",
+          "required": ["enabled", "unit_kwh", "unit_price_ht", "max_units"],
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "unit_kwh": { "type": "number" },
+            "unit_price_ht": { "type": "number" },
+            "max_units": { "type": "integer" },
+            "units_requested": { "type": ["integer", "null"] }
+          },
+          "additionalProperties": false
+        },
+
+        "forced": {
+          "type": "object",
+          "properties": {
+            "active": { "type": ["boolean", "null"] },
+            "lock_selection": { "type": ["boolean", "null"] },
+            "kwc": { "type": ["number", "null"] },
+            "battery_units": { "type": ["integer", "null"] },
+            "variant": { "type": ["string", "null"], "enum": ["with_battery", "without_battery", null] },
+            "oa_enabled": { "type": ["boolean", "null"] },
+            "reason": { "type": ["string", "null"] },
+            "reco_auto_kwc": { "type": ["number", "null"] },
+            "reco_auto_variant": { "type": ["string", "null"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "selection": {
+      "type": "object",
+      "required": ["A", "B"],
+      "properties": {
+        "A": {
+          "type": "object",
+          "required": ["panneaux", "kwc", "variante"],
+          "properties": {
+            "panneaux": { "type": "integer" },
+            "kwc": { "type": "number" },
+            "variante": { "type": "string", "enum": ["avec_batterie", "sans_batterie"] },
+            "score": { "type": ["number", "null"] },
+            "capex": { "type": ["number", "null"] },
+            "tri": { "type": ["number", "null"] },
+            "roi": { "type": ["number", "null"] },
+            "autoprod_pct": { "type": ["number", "null"] },
+            "gains_25ans": { "type": ["number", "null"] }
+          },
+          "additionalProperties": true
+        },
+        "B": { "$ref": "#/properties/selection/properties/A" }
+      },
+      "additionalProperties": false
+    },
+
+    "scenario_gagnant": {
+      "type": "object",
+      "required": ["code"],
+      "properties": {
+        "code": { "type": "string", "enum": ["A1", "A2", "B1", "B2"] },
+        "raison": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+
+    "scenario_forced": { "type": ["object", "null"] },
+
+    "scenarios": {
+      "type": "object",
+      "patternProperties": {
+        "^(A1|A2|B1|B2)$": {
+          "type": "object",
+          "required": ["label", "annee1", "ans25", "capex_ttc", "kpi"],
+          "properties": {
+            "label": { "type": "string" },
+
+            "annee1": {
+              "type": "object",
+              "required": ["mois", "totaux"],
+              "properties": {
+                "mois": {
+                  "type": "array",
+                  "minItems": 12,
+                  "items": {
+                    "type": "object",
+                    "required": ["mois", "prod", "conso", "autoconso", "surplus", "import", "eco_eur", "oa_eur"],
+                    "properties": {
+                      "mois": { "type": "string" },
+                      "prod": { "type": "number" },
+                      "conso": { "type": "number" },
+                      "autoconso": { "type": "number" },
+                      "surplus": { "type": "number" },
+                      "import": { "type": "number" },
+                      "eco_eur": { "type": "number" },
+                      "oa_eur": { "type": "number" }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "totaux": {
+                  "type": "object",
+                  "required": ["prod", "conso", "autoconso", "surplus", "import", "economie_auto", "revenu_oa", "prime"],
+                  "properties": {
+                    "prod": { "type": "number" },
+                    "conso": { "type": "number" },
+                    "autoconso": { "type": "number" },
+                    "surplus": { "type": "number" },
+                    "import": { "type": "number" },
+                    "economie_auto": { "type": "number" },
+                    "revenu_oa": { "type": "number" },
+                    "prime": { "type": "number" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+
+            "ans25": {
+              "type": "array",
+              "minItems": 20,
+              "items": {
+                "type": "object",
+                "required": ["annee", "prod", "economie_auto", "gains_totaux"],
+                "properties": {
+                  "annee": { "type": "integer" },
+                  "prod": { "type": "number" },
+                  "economie_auto": { "type": "number" },
+                  "revenu_oa": { "type": ["number", "null"] },
+                  "gains_totaux": { "type": "number" }
+                },
+                "additionalProperties": false
+              }
+            },
+
+            "capex_ttc": {
+              "type": "object",
+              "required": ["materiel_ttc", "pose_ttc", "total_ttc"],
+              "properties": {
+                "materiel_ttc": { "type": "number" },
+                "pose_ttc": { "type": "number" },
+                "total_ttc": { "type": "number" }
+              },
+              "additionalProperties": false
+            },
+
+            "kpi": {
+              "type": "object",
+              "required": ["lcoe_eur_kwh", "gains_25ans"],
+              "properties": {
+                "roi_annees": { "type": ["number", "null"] },
+                "roi_annuel_pct": { "type": ["number", "null"] },
+                "tri_pct": { "type": ["number", "null"] },
+                "lcoe_eur_kwh": { "type": "number" },
+                "autoconso_pct": { "type": ["number", "null"] },
+                "autoprod_pct": { "type": ["number", "null"] },
+                "gains_annee1": { "type": ["number", "null"] },
+                "gains_25ans": { "type": "number" }
+              },
+              "additionalProperties": true
+            },
+
+            "audit": {
+              "type": ["object", "null"],
+              "properties": {
+                "ok": { "type": ["boolean", "null"] },
+                "messages": { "type": ["array", "null"], "items": { "type": "string" } }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "charts": {
+      "type": "object",
+      "properties": {
+        "stacked_mensuel": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["mois", "production", "consommation", "autoconso", "surplus", "import"],
+            "properties": {
+              "mois": { "type": "string" },
+              "production": { "type": "number" },
+              "consommation": { "type": "number" },
+              "autoconso": { "type": "number" },
+              "surplus": { "type": "number" },
+              "import": { "type": "number" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "gains_cumules_25ans": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["annee", "gains_cumules", "gains_annuels"],
+            "properties": {
+              "annee": { "type": "integer" },
+              "gains_cumules": { "type": "number" },
+              "gains_annuels": { "type": "number" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "comparatif_kpi": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["scenario", "lcoe_eur_kwh", "gains_25ans"],
+            "properties": {
+              "scenario": { "type": "string", "enum": ["A1", "A2", "B1", "B2"] },
+              "roi_annuel_pct": { "type": ["number", "null"] },
+              "tri_pct": { "type": ["number", "null"] },
+              "lcoe_eur_kwh": { "type": "number" },
+              "gains_25ans": { "type": "number" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "impact_batterie_A": { "type": ["object", "null"] },
+        "impact_batterie_B": { "type": ["object", "null"] },
+        "financement": { "type": ["object", "null"] }
+      },
+      "additionalProperties": true
+    },
+
+    "audit_ok": { "type": "boolean" },
+
+    "audit": {
+      "type": "object",
+      "required": ["audit_ok", "issues"],
+      "properties": {
+        "audit_ok": { "type": "boolean" },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["severity", "code"],
+            "properties": {
+              "severity": { "type": "string", "enum": ["info", "warn", "error"] },
+              "code": { "type": "string" },
+              "msg": { "type": ["string", "null"] },
+              "scenario": { "type": ["string", "null"] }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

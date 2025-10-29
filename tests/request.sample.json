@@ -1,0 +1,21 @@
+{
+  "tarifs_effectifs": {
+    "effective_price": 0.1952,
+    "tempo": false,
+    "tempo_avg": null,
+    "oa_enabled": true
+  },
+  "battery_config": {
+    "enabled": true,
+    "units_requested": 1
+  },
+  "force": {
+    "enabled": false
+  },
+  "pvgis": {
+    "production_mensuelle_kwh": [260, 300, 420, 520, 620, 680, 720, 690, 540, 380, 240, 200]
+  },
+  "consommation": {
+    "mensuelle_kwh": [700, 650, 620, 580, 560, 540, 530, 540, 600, 650, 690, 720]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "SmartPitch Solarglobe backend (API /api/calculate + validation AJV)",
+  "main": "server.js",
+  "license": "ISC",
+  "author": "",
+  "keywords": [],
+  "scripts": {
+    "start": "node server.js",
+    "test": "node scripts/test-calc.js",
+    "test:calc": "node scripts/test-calc.js",
+    "test:calc:remote": "cross-env CALC_URL=https://crm.solarglobe.fr/api/calculate node scripts/test-calc.js",
+    "snapshot": "node scripts/snapshot-response.js"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "openai": "^6.6.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
