@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write        # créer tags, releases, pousser CHANGELOG.md
+  contents: write
   issues: write
   pull-requests: write
 
@@ -23,16 +23,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.14.0
-          cache: "npm"
+          cache: npm
 
       - name: Install dependencies
         run: npm install
 
-      # (Optionnel) tu peux réactiver tes tests qualité ici
+      # Optionnel : réactiver tes tests qualité ici
       # - name: Run quality pipeline
       #   run: npm run quality
 
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run release
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          export HUSKY=0
+          npm run release
